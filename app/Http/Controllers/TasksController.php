@@ -120,7 +120,7 @@ class TasksController extends Controller
         $task = Task::find($id);
         $task->status = $request->status;
         $task->content = $request->content;
-        $task->user_id = $userid->user_id;
+        $task->user_id = $userid->id;
         $task->save();
 
         return redirect('/');
