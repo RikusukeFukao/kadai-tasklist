@@ -80,7 +80,7 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        $task = task::find($id);
+        $task = Task::find($id);
         
         if (\Auth::id() === $task->user_id)
 
@@ -89,7 +89,7 @@ class TasksController extends Controller
         ]);
     
         else {
-            return redirect()->back();
+            return redirect('/');
         }
     }
 
@@ -110,7 +110,7 @@ class TasksController extends Controller
         ]);
         
         else{
-            return redirect()->back();    
+            return redirect('/');    
         }
     }
 
